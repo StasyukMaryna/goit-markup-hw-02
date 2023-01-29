@@ -28,19 +28,25 @@ body {
   cursor: pointer;
 }
 
-.hidden {
+.visually-hidden {
   position: absolute;
+  white-space: nowrap;
   width: 1px;
   height: 1px;
-  margin: -1px;
+  overflow: hidden;
   border: 0;
   padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
   clip: rect(0 0 0 0);
-  overflow: hidden;
+  clip-path: inset(50%);
+  margin: -1px;
 }
 /*------------------- HEADER----------------- */
+.header-link:hover,
+.header-link:focus,
+.header-link.current {
+  color: var(--accent-color);
+}
+
 .header-logo {
   font-family: "Raleway", sans-serif;
   font-weight: 800;
@@ -162,14 +168,16 @@ body {
 }
 /*------------------- TEAM----------------- */
 /*------------------- PORTFOLIO----------------- */
-.portfolio-button:is(:hover, :focus) {
-   background color: var(--accent-color);
-}
 
 .portfolio-button {
   color: #4d5ae5;
   background-color: var(--main-button-color);
   border: 1px solid #e7e9fc;
+}
+
+.portfolio-button:is(:hover, :focus) {
+  color: #ffffff;
+  background-color: var(--accent-color);
 }
 
 .portfolio-title {
